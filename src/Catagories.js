@@ -8,9 +8,7 @@ class Catagories extends React.Component {
 
     componentDidMount() {
         this.callApi()
-        .then(response => this.setState({
-            response: response.length + ' items found'
-        }))
+        .then(response => this.setState({response}))
         .catch(err => console.log(err));
     }
     callApi = async () => {
@@ -21,10 +19,19 @@ class Catagories extends React.Component {
     }
 
     render () {
+        const { response } = this.state
+
+        const itemsList = []
+
+        for (const [index, item] of response.entries()) {
+            itemsList.push(<li key={index}>{item.name}  added by {item.addedBy}</li>)
+        }
         return (
             <div>
-                <div>Catagories Place holder</div>
-                <div>{this.state.response}</div>
+                <h1>{response.length} items found</h1>
+                <ul>
+                    {itemsList}
+                </ul>
             </div>
         )
     }
