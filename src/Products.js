@@ -28,12 +28,13 @@ class Products extends React.Component {
         const itemsList = []
 
         for (const [index, item] of response.entries()) {
-            itemsList.push(<li key={index}>{item.title}  added by {item.addedBy}</li>)
+            itemsList.push(<li key={index}>{item.title}: {item.description}: {item.addedBy}</li>)
         }
         return (
-            <div>
+            <div className="divbot">
                 <h1>{response.length + ' items found'}</h1>
                 <ul>
+                    <h3>Title: Description: added_by</h3>
                     {itemsList}
                 </ul>
             </div>

@@ -12,6 +12,7 @@ import Stores from './Stores'
 import Catagories from './Catagories'
 import Variations from './Variations'
 import ProductTypes from './Product-types'
+import './App.css'
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -25,7 +26,7 @@ import ProductTypes from './Product-types'
 export default function BasicExample() {
   return (
     <Router>
-      <div>
+      <div className="divtop">
         <ul>
           <li>
             <Link to="/">Home</Link>

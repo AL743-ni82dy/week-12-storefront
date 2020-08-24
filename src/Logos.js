@@ -1,4 +1,5 @@
 import React from 'react'
+import colorString from './Utility'
 
 class Logos extends React.Component {
     constructor () {
@@ -24,17 +25,23 @@ class Logos extends React.Component {
         const itemsList = []
 
         for (const [index, item] of response.entries()) {
-            itemsList.push(<li key={index}>{item.name}  added by {item.addedBy}</li>)
+            let colorList = colorString(item.color)
+            let colorsList = colorString(item.colors)
+            itemsList.push(<li key={index}>
+                {item.name}: {item.description}: {colorList}: {colorsList}: {item.size}: {item.addedby}
+                </li>)
         }
         return (
-            <div>
+            <div className="divbot">
                 <h1>{response.length} items found</h1>
                 <ul>
+                    <h3>Name: Description: Color: Colors: Size: added_by</h3>
                     {itemsList}
                 </ul>
             </div>
         )
     }
+    
 }
 
 export default Logos

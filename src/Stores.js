@@ -24,12 +24,15 @@ class Stores extends React.Component {
         const itemsList = []
 
         for (const [index, item] of response.entries()) {
-            itemsList.push(<li key={index}>{item.name} added by {item.addedBy}</li>)
+            itemsList.push(<li key={index}>
+                {item.name}: {item.location}: {item.city}: {item.state}: {item.phone}: {item.addedBy}
+                </li>)
         }
         return (
-            <div>
+            <div className="divbot">
                 <h1>{response.length} items found</h1>
                 <ul>
+                    <h3>Name: Location: City: State: phone: added_by</h3>
                     {itemsList}
                 </ul>
             </div>

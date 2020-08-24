@@ -1,4 +1,5 @@
 import React from 'react'
+import colorString from './Utility'
 
 class Variations extends React.Component {
     constructor () {
@@ -24,12 +25,14 @@ class Variations extends React.Component {
         const itemsList = []
 
         for (const [index, item] of response.entries()) {
-            itemsList.push(<li key={index}>{item.name} added by {item.addedBy}</li>)
+            const colors = colorString(item.color)
+            itemsList.push(<li key={index}>{item.name}: {item.variation}: {item.Color}: {colors}: {item.addedBy}</li>)
         }
         return (
-            <div>
+            <div className="divbot">
                 <h1>{response.length} items found</h1>
                 <ul>
+                    <h3>Name: Variation: Color: color: added_by</h3>
                     {itemsList}
                 </ul>
             </div>
