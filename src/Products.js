@@ -1,4 +1,5 @@
 import React from 'react'
+import { responseSort } from './Utility'
 
 class Products extends React.Component {
     constructor () {
@@ -27,12 +28,14 @@ class Products extends React.Component {
 
         const itemsList = []
 
-        for (const [index, item] of response.entries()) {
+        let sortedList = responseSort(response)
+
+        for (const [index, item] of sortedList.entries()) {
             itemsList.push(<li key={index}>{item.title}: {item.description}: {item.addedBy}</li>)
         }
         return (
             <div className="divbot">
-                <h1>{response.length + ' items found'}</h1>
+                <h1>{sortedList.length + ' items found'}</h1>
                 <ul>
                     <h3>Title: Description: added_by</h3>
                     {itemsList}

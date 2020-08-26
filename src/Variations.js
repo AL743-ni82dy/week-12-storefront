@@ -1,5 +1,5 @@
 import React from 'react'
-import colorString from './Utility'
+import { colorString } from './Utility'
 
 class Variations extends React.Component {
     constructor () {
