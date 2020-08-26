@@ -31,15 +31,16 @@ class Products extends React.Component {
         let sortedList = responseSort(response)
 
         for (const [index, item] of sortedList.entries()) {
-            itemsList.push(<li key={index}>{item.title}: {item.description}: {item.addedBy}</li>)
+            itemsList.push(<tr key={index}><td>{item.title}</td>
+            <td>{item.description}</td> <td>{item.addedBy}</td></tr>)
         }
         return (
             <div className="divbot">
                 <h1>{sortedList.length + ' items found'}</h1>
-                <ul>
-                    <h3>Title: Description: added_by</h3>
+                <table>
+                    <tr><th><h3>Title</h3></th> <th><h3>Description</h3></th> <th className="right"><h3>added_by</h3></th></tr>
                     {itemsList}
-                </ul>
+                </table>
             </div>
         )
     }

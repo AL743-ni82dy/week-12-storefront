@@ -27,3 +27,16 @@ div.divtop {
 div.divbot {
   background-color: lightcyan;
 }
+
+td {
+  border: 1px solid blue;
+}
+
+th {
+  width: 42.4%;
+  padding: 10px;
+}
+
+th.right {
+  width: 11.4%;
+}
