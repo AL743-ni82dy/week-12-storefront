@@ -19,6 +19,7 @@ function responseSort(array) {
     let theKey;
     let prevValue = '';
     let foundBefore = 0
+    let uniqueList = []
     if (arrayCopy.length === 0) {
         returnArray = []
     } else if (arrayCopy.length === 1 ) {
@@ -36,8 +37,13 @@ function responseSort(array) {
             valueArray = []
         })
         sortedValues = firstValueArray.sort()
+        sortedValues.forEach( (value) => {
+            if (!uniqueList.includes(value)) {
+                uniqueList.push(value)
+            }
+        })
 
-        sortedValues.forEach( (sortValue) => {
+        uniqueList.forEach( (sortValue) => {
             let counter = 0
             let foundCount = 0
             if (sortValue === prevValue) {
@@ -65,9 +71,6 @@ function responseSort(array) {
             prevValue = sortValue
         })
         
-    }
-    if ( returnArray.length !== sortedValues.length) {
-        alert('return array ' + returnArray.length)
     }
     return returnArray
 }

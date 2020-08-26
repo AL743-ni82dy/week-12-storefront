@@ -36,7 +36,7 @@ class Products extends React.Component {
         }
         return (
             <div className="divbot">
-                <h1>{sortedList.length + ' items found'}</h1>
+                <h1>{sortedList.length + ' unique items found'}</h1>
                 <table>
                     <tr><th><h3>Title</h3></th> <th><h3>Description</h3></th> <th className="right"><h3>added_by</h3></th></tr>
                     {itemsList}
